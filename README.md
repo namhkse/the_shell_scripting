@@ -46,4 +46,67 @@ echo "I will create you a file called ${USER_NAME}_file"
 touch $USER_NAME_file
 ```
 The below code is error because `touch $USER_NAME_file` will be understand as a undeclared variable, cause execute "touch" command without arg
+
 Correct: touch `${USER_NAME}_file`
+
+Wildcards
+=========
+Think first how you would copy all the files from /tmp/a into /tmp/b. All the .txt files? All the .html files?
+```sh
+cp /tmp/a/* /tmp/b      # Copy all the files
+cp /tmp/a/*.txt /tmp/b  # Copy all the txt files
+cp /tmp/a/*.html /tmp/b  # Copy all the html files
+```
+
+How would you list the files in `/tmp/a` without `ls /tmp/a`?
+May I use `echo /tmp/a/*`?
+
+How could you rename all .txt files to .bak?
+```sh
+mv *.txt *.bak  # This is not worked
+```
+Thinking about the expaned by the shell. The above command will be interpreted as
+```sh
+mv a.txt b.txt  # If no have .bak files
+# Or
+mv a.txt b.txt c.bak d.bak # If have .bak files
+```
+
+Escape Characters
+=================
+So how do we display: Hello    "World" ?
+```sh
+echo "Hello    "World""
+# Or
+echo "Hello    \"World\""
+```
+The `echo "Hello    "Would""` code would be interpreted as three parameters
+1. "Hello    "
+2. World
+3. ""
+
+Most characters(*, ', ect) are not intepreted by placed in double quotes("")
+
+However ", $, `, and \ are still interpreted by the shell
+The backslash (\) is used to mark special characters so they are not intepreted by the shell
+
+Loops
+=====
+We have **for** and **while** in shell
+
+Tip from **Linux From Scratch**:
+```sh
+mkdir rc{0,1,2,3,4,5,6,S}.d
+```
+More cumbersome
+```sh
+for runlever in 0 1 2 3 4 5 6 S
+do
+    mkdir rc${runlever}.d
+done
+```
+Trick list dir recursive 
+```sh
+    ls {,usr,usr/local}/{bin,sbin,lib}
+```
+
