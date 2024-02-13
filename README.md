@@ -30,7 +30,7 @@ Scope of variables
 - Variable in shell do not have to be declared
 - Try to read an undeclared variable, the result is empty string, no WARNING
 
-The command "export" has a fundamental effect on the scope of variables
+The command `export` has a fundamental effect on the scope of variables
 
 When a shell scrip is excuted, a new shell is spawned to run the script. The variabled is not shared. We need to export the variable
 for it to be inherited by another program - include a shell script
@@ -45,5 +45,5 @@ echo "Hello $USER_NAME"
 echo "I will create you a file called ${USER_NAME}_file"
 touch $USER_NAME_file
 ```
-The below code is error because "touch $USER_NAME_file" will be understand as a undeclared variable, cause execute "touch" command without arg
-Correct: touch "${USER_NAME}_file"
+The below code is error because `touch $USER_NAME_file` will be understand as a undeclared variable, cause execute "touch" command without arg
+Correct: touch `${USER_NAME}_file`
