@@ -45,5 +45,5 @@ echo "Hello $USER_NAME"
 echo "I will create you a file called ${USER_NAME}_file"
 touch $USER_NAME_file
 ```
-The below code is error because 'touch $USER_NAME_file" will be understand as a undeclared variable, cause execute "touch" command without arg
+The below code is error because "touch $USER_NAME_file" will be understand as a undeclared variable, cause execute "touch" command without arg
 Correct: touch "${USER_NAME}_file"
