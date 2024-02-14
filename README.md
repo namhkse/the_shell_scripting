@@ -110,3 +110,30 @@ Trick list dir recursive
     ls {,usr,usr/local}/{bin,sbin,lib}
 ```
 
+Test
+====
+
+The **[** is a symbolic link to **test**. The **[** is actual program so must be surronded by spaces.
+```sh
+if [$foo = "bar" ]
+```
+After interpreted **if test$foo = "bar" ]**.
+```sh
+[ EXPRESSION ] 
+# Equal
+test EXPRESSION
+# See more operators in "test" command in "man test" 
+```
+
+The **&&** and **||** command give code to run if the result is true or false
+```sh
+if [ EXPRESSION ]; then
+    echo "Run if true"
+else
+    echo "Run if false"
+fi
+```
+My rewrite use **&&** and *||** a below
+```sh
+[ EXPRESSION ] && echo "Run if true" || echo "Run if false"
+```
