@@ -137,3 +137,6 @@ My rewrite use **&&** and *||** a below
 ```sh
 [ EXPRESSION ] && echo "Run if true" || echo "Run if false"
 ```
+
+Case
+====
