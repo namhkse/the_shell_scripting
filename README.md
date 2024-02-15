@@ -140,3 +140,40 @@ My rewrite use **&&** and *||** a below
 
 Case
 ====
+
+Variables - Part 2
+==================
+There are some special variables, can not be assigned to them.
+They contain useful information, can be used by the script to know about the env in which it running
+
+```sh
+$0 is name of called program
+$1 .. $9 are 9 addition args
+$# is a number parameter was passed to script 
+$@ or $* is all parameter
+$? contains exited value
+$$ is PID of current running shell
+$! is PID of last background process
+$IFS run var5.sh to know 
+```
+
+Variables - Part 3
+==================
+
+Print default for variable when it is undefined by using `:-` and `{}`
+```sh
+echo "${number:-0}"
+echo "number is: $number"
+```
+
+Asign default for variable when it is undefined by using `:=` and `{}`
+```sh
+echo "${number:-0}"
+echo "number is: $number"
+```
+
+External Programs
+=================
+
+Functions
+=========
